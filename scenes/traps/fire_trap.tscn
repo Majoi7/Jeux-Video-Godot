@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://firetrap1"]
+
+[ext_resource type="Script" path="res://scripts/traps/fire_trap.gd" id="1_fire"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fire"]
+size = Vector2(12, 28)
+
+[node name="FireTrap" type="Node2D"]
+script = ExtResource("1_fire")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_fire")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

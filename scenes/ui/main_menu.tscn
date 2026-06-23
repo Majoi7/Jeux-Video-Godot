@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://mainmenu1"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" path="res://ressource/Background/Green.png" id="2_bg"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_menu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_bg")
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -100.0
+offset_right = 140.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.15, 0.35, 0.1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Aventure à la Ferme"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.2, 0.45, 0.15, 1)
+theme_override_font_sizes/font_size = 14
+text = "Plateforme 2D — Godot"
+horizontal_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+text = "Jouer"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(220, 44)
+layout_mode = 2
+text = "Quitter"
+
+[node name="Help" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -220.0
+offset_top = -48.0
+offset_right = 220.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.1, 0.25, 0.08, 1)
+theme_override_font_sizes/font_size = 12
+text = "Flèches / A-D : bouger  |  Espace : sauter  |  Écraser les ennemis !"
+horizontal_alignment = 1

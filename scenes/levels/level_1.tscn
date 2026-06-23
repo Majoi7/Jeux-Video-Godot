@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://level001"]
+
+[ext_resource type="Script" path="res://scripts/level/level.gd" id="1_level"]
+[ext_resource type="Texture2D" path="res://ressource/Background/Green.png" id="2_bg"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_level")
+level_index = 0
+map_file = "res://levels/level_1_map.txt"
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(400, 180)
+scale = Vector2(20, 12)
+texture = ExtResource("2_bg")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = null
+format = 2
+
+[node name="Entities" type="Node2D" parent="."]
